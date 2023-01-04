@@ -1,0 +1,9 @@
+<div *ngIf="article">
+    <h2>News title: {{article.title}}</h2>
+    <div>id: {{article.id}}</div>
+    <div>
+        <label for="article-title">Edit article title: </label>
+        <input id="article-title" [(ngModel)]="article.title" placeholder="article-title">
+    </div>
+    <div>written by {{article.author}}</div>
+</div>
