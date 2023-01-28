@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Article } from './article';
-import { ARTICLES } from './mock-articles';
+import { Article } from '../models/article';
+import { ARTICLES } from '../mock-articles';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 
@@ -15,5 +15,11 @@ export class ArticleService {
     const articles = of (ARTICLES)
     this.messageService.add("ArticleService: fetched articles")
     return articles
+  }
+
+  getArticle(id: number): Observable<Article> {
+    const article = ARTICLES.find(a => a.id === id)!;
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(article);
   }
 }

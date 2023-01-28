@@ -4,6 +4,10 @@
     padding: 0;
     
   }
+  .articles a {
+    text-decoration: none;
+    color: #2c3a41;
+  }
   
   .articles li {
     display: flex;
